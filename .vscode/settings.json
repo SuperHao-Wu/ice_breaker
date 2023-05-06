@@ -1,0 +1,66 @@
+{
+  "git.confirmSync": false,
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "vscode-icons",
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "jupyter.alwaysTrustNotebooks": true,
+  "svgviewer.transparencygrid": false,
+  "editor.minimap.enabled": false,
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "task.problemMatchers.neverPrompt": {
+    "shell": true
+  },
+  "editor.codeLens": true,
+  "editor.formatOnSave": true,
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+
+  "python.testing.unittestArgs": ["-v", "-s", "./backend", "-p", "test_*.py"],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true,
+  "python.formatting.provider": "none",
+  "python.formatting.blackPath": "/Users/wuhao/Library/Caches/pypoetry/virtualenvs/ice-breaker-BGRN9HyH-py3.11/bin/black",
+  "python.languageServer": "Pylance",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "python.linting.pylintPath": "/Users/wuhao/Library/Caches/pypoetry/virtualenvs/ice-breaker-BGRN9HyH-py3.11/bin/pylint",
+  "python.linting.mypyPath": "/Users/wuhao/Library/Caches/pypoetry/virtualenvs/ice-breaker-BGRN9HyH-py3.11/bin/mypy",
+  "python.linting.banditPath": "/Users/wuhao/Library/Caches/pypoetry/virtualenvs/ice-breaker-BGRN9HyH-py3.11/bin/bandit",
+  "python.linting.banditEnabled": true,
+  "python.linting.banditArgs": ["--skip", "B101"],
+  "python.linting.pycodestylePath": "/Users/wuhao/Library/Caches/pypoetry/virtualenvs/ice-breaker-BGRN9HyH-py3.11/bin/pycodestyle",
+  "python.defaultInterpreterPath": "/Users/wuhao/Library/Caches/pypoetry/virtualenvs/ice-breaker-BGRN9HyH-py3.11/bin/python",
+  "python.linting.pylintEnabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pycodestyleEnabled": true,
+  "python.linting.pylintArgs": ["--enable=W0614", "--disable=protected-access", "--disable=singleton-comparison"],
+  "python.linting.pycodestyleArgs": ["--max-line-length 120"],
+  "[python]": {
+    "editor.rulers": [120],
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "files.exclude": {
+    // hide certain files in VS Code
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".pytest_cache/**": true,
+    "**/__pycache__/**": true,
+    "**/.mypy_cache/**": true,
+    ".coverage": true,
+    ".Trash*": true,
+    ".ipython": true,
+    ".ipynb_checkpoints": true,
+    "analyzer-server": true // It is explicitly mapped as its' own project so we can customize settings, therefore hide in flavia folder
+  },
+  "jupyter.jupyterServerType": "local"
+}

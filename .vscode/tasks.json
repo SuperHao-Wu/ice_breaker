@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "mimic: debug server",
+        "command": "docker exec -it mimic-server python -m debugpy --wait-for-client --listen 0.0.0.0:5678 -m uvicorn app.api.server:app --host 0.0.0.0 --port 9000",
+        "problemMatcher": [
+          "$eslint-compact"
+        ]
+      },
+      {
+        "type": "shell",
+        "label": "mimic: run test",
+        "command": "docker exec -it mimic-server pytest ${relativeFile} -k ${selectedText} -vv"
+      },
+      {
+        "type": "shell",
+        "label": "mimic: debug test",
+        "command": "docker exec -it mimic-server python -m debugpy --wait-for-client --listen 0.0.0.0:5678 -m pytest ${relativeFile}"
+      },
+      {
+        "type": "shell",
+        "label": "xbird: runserver",
+        "command": "docker exec -it django python manage.py runserver 0.0.0.0:8000"
+      },
+      {
+        "type": "shell",
+        "label": "xbird: open dbshell",
+        "command": "PGPASSWORD=debug pgcli -h localhost -p 5436 -U debug flavia_local"
+      },
+      {
+        "type": "shell",
+        "label": "xbird: manage.py",
+        "command": "docker exec -it django python manage.py ${input:manage.py command}"
+      },
+      {
+        "type": "shell",
+        "label": "xbird: jupyter",
+        "command": "docker exec -it django jupyter notebook --allow-root --NotebookApp.token='token' --port=8889 --ip=0.0.0.0 --no-browser"
+      },
+      {
+        "type": "shell",
+        "label": "xbird: debug analyzer",
+        "command": "docker exec -it analyzer python -m debugpy --wait-for-client --listen 0.0.0.0:5678 analyzer.py"
+      }
+    ],
+    "inputs": [
+      {
+        "id": "manage.py command",
+        "description": "manage.py command:",
+        "type": "promptString"
+      }
+    ]
+  }
+  
